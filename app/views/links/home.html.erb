@@ -1,0 +1,14 @@
+<h1> Fake Reddit </h1>
+
+<%= link_to new_link_path do %>
+  <i class="fa fa-plus"></i>Add New Link
+<% end %>
+
+
+<ul>
+  <% @links.each do |link| %>
+  <li> <%=link.url %></li>
+  <li> <%=link.title%></li>
+    <i> link.vote</i>
+  <% end %>
+</ul>
