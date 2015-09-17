@@ -6,9 +6,7 @@ Rails.application.routes.draw do
 #
 root "links#home"
 
-resources :links do
-  post 'upvote'
-end
+post 
 
 
 get 'links/new' =>"links#new"
