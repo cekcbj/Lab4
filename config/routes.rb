@@ -4,12 +4,16 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
 #
-root "links#home"
-
-post 
-
-
-get 'links/new' =>"links#new"
+root "links#home" , as: :root
+get 'links/new' => 'links#new', as: :new_link
+post 'links/:id/upvote' => 'links#upvote', as: :upvote_link
+post 'links' => 'links#create', as: :links
+post 'links/:id/downvote' => 'links#downvote', as: :downvote_link
+resources :links do
+  member do
+    post 'upvote'
+  end
+end
 
 
   # Example of regular route:

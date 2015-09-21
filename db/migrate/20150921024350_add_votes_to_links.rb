@@ -1,5 +1,5 @@
 class AddVotesToLinks < ActiveRecord::Migration
   def change
-    add_column :links, :votes, :integer
+    add_column :links, :vote_count, :integer
   end
 end
