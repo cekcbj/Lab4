@@ -13,9 +13,9 @@ def detail
   end
 
   def create
-    @link = Link.new
+    @link = Link.new(link_params)
   if @link.save
-    redirect_to home
+    redirect_to root_path
   else
     render :new
   end
@@ -36,6 +36,9 @@ def downvote
   redirect_to root_path
   end
 
+def link_params
+  params.require(:link).permit(:title, :url, :created_at, :photo, :id)
+end
 
 
 def hot
